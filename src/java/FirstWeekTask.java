@@ -70,7 +70,7 @@ public class FirstWeekTask extends HttpServlet {
             String name = request.getParameter("Name");
             String add = request.getParameter("Address");
             out.print(add);
-            String phone = request.getParameter("Phone_number");
+            String phone = request.getParameter("Phone_num");
 //            if(phone.length()<=10)
 //                out.print("ok");
 //            else
@@ -86,7 +86,7 @@ public class FirstWeekTask extends HttpServlet {
 //                    out.print("invalid password format");
 //                    return;
 //            }
-            String passrpt = request.getParameter("Pass_rpt");
+//            String passrpt = request.getParameter("Pass_rpt");
 //         PrintWriter out = response.getWriter();
 //         out.print("accept");
             try {

@@ -8,23 +8,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <script> 
-        $(document).ready(function(){
-           $('#r1').click(function(){
-               console.log("hello")
-               let rform=$('#regis').serialize();
-               console.log(rform);
-               $.post("FirstWeekTask?signup",rform,function(result){
-                   console.log(result)
-                   if(result="true"){
-//                      location.href="AfterRegistration.html";
-                      alert("Welcome !! You are successfully registered")
-                   }else{
-                       alert("Something went wrong")
-                   }
-               })
-           }); 
-        });
+        <script>
+            $(document).ready(function () {
+                $('#r1').click(function () {
+                    console.log("hello")
+                    let rform = $('#regis').serialize();
+                    console.log(rform);
+                    $.post("FirstWeekTask?signup", rform, function (result) {
+                        console.log(result)
+                        if (result = "true") {
+                            alert("Welcome !! You are successfully registered")
+
+                            location.href = "AfterRegistration.html";
+                        } else {
+                            alert("Something went wrong")
+                        }
+                    })
+                });
+            });
         </script>
     </head>
     <body>
@@ -56,7 +57,7 @@
 
                                         <div class="form-outline form-white mb-4">
                                             <label class="form-label" for="typeEmailX">Phone number:</label>
-                                            <input type="number" id="typeEmailX" name="Phone_num" class="form-control form-control-lg" required />
+                                            <input type="number" id="typeEmailX" name="Phone_number" class="form-control form-control-lg" required />
                                         </div>
 
                                         <div>
@@ -66,12 +67,12 @@
                                             <input type="radio" value="Other" name="Gender"> Other 
                                         </div> 
                                         <br>
-                                        
+
                                         <div class="form-outline form-white mb-4">
                                             <label class="form-label" for="typeEmailX">Email:</label>
                                             <input type="email" id="typeEmailX" name="Email" class="form-control form-control-lg" required />
                                         </div>
-                                        
+
                                         <div class="form-outline form-white mb-4">
                                             <label class="form-label" for="typePasswordX">Password:</label>
                                             <input type="password" id="typePasswordX" name="Pass" class="form-control form-control-lg" required/>
@@ -83,10 +84,10 @@
                                         </div>
                                         <hr>
                                         <!--<p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>-->
-                                        
+
                                         <button class="btn btn-outline-light btn-lg px-5" id="r1" type="button" >Register</button> <br><br>
-                                        <!-- <button type="submit" class=""> Already have account? <a href="index.html" >Login</a> <br> -->
-                                            <label class="form-label" for="typePasswordX">Already have account ? click on </label><a href="index.html">Login</a>
+
+                                        <label class="form-label" for="typePasswordX">Already have account ? click on </label><a href="index.html">Login</a>
 
 
 

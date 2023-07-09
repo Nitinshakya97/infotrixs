@@ -69,8 +69,7 @@ public class FirstWeekTask extends HttpServlet {
             String eid = request.getParameter("Eid");
             String name = request.getParameter("Name");
             String add = request.getParameter("Address");
-            out.print(add);
-            String phone = request.getParameter("Phone_num");
+            String phone = request.getParameter("Phone_number");
 //            if(phone.length()<=10)
 //                out.print("ok");
 //            else
@@ -79,25 +78,18 @@ public class FirstWeekTask extends HttpServlet {
 //                    }
             String gen = request.getParameter("Gender");
             String email = request.getParameter("Email");
-            String user = request.getParameter("User_name");
             String pass = request.getParameter("Pass");
+//            
 //            if(checkString(pass)==false)
 //            {
 //                    out.print("invalid password format");
 //                    return;
 //            }
-//            String passrpt = request.getParameter("Pass_rpt");
-//         PrintWriter out = response.getWriter();
-//         out.print("accept");
             try {
-//                Class.forName("com.mysql.cj.jdbc.Driver");
-//
-//                Connection con = DriverManager.getConnection("jdbc:mysql://localhost/abc", "root", "Nitin");
-//                Statement st = con.createStatement();
                 int n = st.executeUpdate("insert  into emp (Name,Address,Phone_number,Gender,Email,Pass) values('" + name + "','" + add + "','" + phone + "','" + gen + "','" + email + "','" + pass + "')");
                 if (n > 0) {
                     out.print("saved");
-//                    response.sendRedirect("AfterRegistration.html");
+                   
 
                 } else {
                     out.print("not saved");
@@ -107,24 +99,19 @@ public class FirstWeekTask extends HttpServlet {
             } catch (SQLException es) {
                 out.print(es);
             }
-        } else if (str.equals("login") == true) {
+        }
+        else if (str.equals("login") == true) {
             String em = request.getParameter("Email");
             String ps = request.getParameter("Pass");
-//            int pid = Integer.parseInt(request.getParameter("pid"));
-//            out.print(pid);
 
             int n = 0;
             try {
                 ResultSet rs = st.executeQuery("select * from emp where Email='" + em + "' and Pass='" + ps + "'");
-//               n = st.executeUpdate("delete from product where Pid=" + pid);
+
                 if (rs.next() == true) {
                     out.print("true");
-//                    response.sendRedirect("AfterLogin.html");
-
                 } else {
                     out.print("false");
-//                    response.sendRedirect("RegistrationForm.html");
-
 
                 }
 
@@ -134,6 +121,15 @@ public class FirstWeekTask extends HttpServlet {
 
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     private static boolean checkString(String str) {
     char ch;
     boolean capitalFlag = false;

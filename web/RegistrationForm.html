@@ -16,9 +16,8 @@
                     console.log(rform);
                     $.post("FirstWeekTask?signup", rform, function (result) {
                         console.log(result)
-                        if (result = "true") {
+                        if (result == "true") {
                             alert("Welcome !! You are successfully registered")
-
                             location.href = "AfterRegistration.html";
                         } else {
                             alert("Something went wrong")
